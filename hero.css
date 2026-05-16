@@ -488,10 +488,6 @@ nav {
 
 @media (max-width: 1024px) {
 
-    /* =========================
-       NAVBAR
-    ========================= */
-
     .hamburger-icon {
         display: block;
         cursor: pointer;
@@ -619,10 +615,6 @@ nav {
         width: 100%;
     }
 
-    /* =========================
-       GLOBAL LAYOUT
-    ========================= */
-
     .hero-container,
     .top-content,
     .bottom-content {
@@ -635,10 +627,7 @@ nav {
         height: auto;
     }
 
-    /* =========================
-       HERO
-    ========================= */
-
+   
     .hero {
         padding: 50px 24px;
     }
@@ -677,9 +666,6 @@ nav {
         max-width: 550px;
     }
 
-    /* =========================
-       SECOND SECTION
-    ========================= */
 
     .compliance-section {
         padding: 70px 24px;
@@ -750,9 +736,6 @@ nav {
         min-height: auto;
     }
 }
-/* ===================================
-   SECOND SECTION MOBILE FIX
-=================================== */
 
 @media (max-width:768px){
 
@@ -762,9 +745,6 @@ nav {
         overflow:hidden;
     }
 
-    /* =========================
-       TOP AREA
-    ========================= */
 
     .top-content{
         width:100%;
@@ -818,10 +798,6 @@ nav {
         top: 350px;
     }
 
-    /* =========================
-       BOTTOM AREA
-    ========================= */
-
     .bottom-content{
         width:100%;
 
@@ -830,10 +806,6 @@ nav {
 
         gap:24px;
     }
-
-    /* =========================
-       IMAGE
-    ========================= */
 
     .illustration-box{
         position:relative;
@@ -865,10 +837,6 @@ nav {
         left:-8px;
         top:350px;
     }
-
-    /* =========================
-       CARDS
-    ========================= */
 
     .cards-container{
         width:100%;
