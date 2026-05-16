@@ -812,16 +812,10 @@ nav {
 
     /* Arrow */
 
-    .arrow-vector{
-        position:absolute;
-
-        width:34px;
-        height:auto;
-
-        right:25px;
-        top:88px;
-
-        opacity:0.9;
+     .arrow-vector {
+        width: 15.3px;
+        right: 10px;
+        top: 350px;
     }
 
     /* =========================
@@ -863,12 +857,13 @@ nav {
 
     .bottom-zigzag{
         position:absolute;
-
+        padding-top:4px ;
+        padding-bottom:4px ;
         width:82px;
         height:auto;
 
         left:-8px;
-        bottom:8px;
+        top:350px;
     }
 
     /* =========================
