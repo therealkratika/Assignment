@@ -1,9 +1,4 @@
 
-
-/* =========================
-   GLOBAL RESET
-========================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -219,6 +214,7 @@ nav {
 }
 
 
+
 /* =========================================================
    DESKTOP / MOBILE VISIBILITY
    ========================================================= */
@@ -248,156 +244,168 @@ nav {
 }
 
 
-/* =========================================================
-   TABLET / MOBILE NAVBAR
-   ========================================================= */
-
 @media (max-width: 1024px) {
 
-    /* -------------------------
-       Header
-    ------------------------- */
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
         width: 100%;
         height: 58px;
-
-        padding: 0 24px;
+        padding: 0 16px;
     }
-
-
-    /* -------------------------
-       Navbar
-    ------------------------- */
 
     nav {
         width: 100%;
         height: 58px;
-
-        margin: 0;
-
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        gap: 0;
     }
-
-
-    /* -------------------------
-       Desktop contact
-    ------------------------- */
 
     .desktop-only {
         display: none;
     }
 
 
-    /* -------------------------
-       Hamburger
-    ------------------------- */
+    /* =========================
+       HAMBURGER
+    ========================= */
 
     .hamburger-icon {
         display: block;
-
         width: 24px;
         height: 24px;
-
         cursor: pointer;
-
         z-index: 3001;
     }
-
+     #menu-toggle:checked ~ .hamburger-icon {
+    display: none;
+}
     .hamburger-icon img {
         width: 24px;
         height: 24px;
-
         display: block;
-
         object-fit: contain;
     }
-
 
     .menu-toggle {
         display: none;
     }
 
 
-    /* =====================================================
-       MOBILE SIDEBAR
-       ===================================================== */
+    /* =========================
+       OVERLAY
+    ========================= */
+
+    .menu-overlay {
+        position: fixed;
+        inset: 0;
+
+        width: 100%;
+        height: 100vh;
+
+        background: rgba(0, 0, 0, 0.45);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition: opacity 0.3s ease;
+
+        z-index: 2999;
+    }
+
+    #menu-toggle:checked ~ .menu-overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    /* =========================
+       SIDEBAR
+       ========================= */
 
     .nav-container {
         position: fixed;
 
         top: 0;
-        left: -100%;
+        right: -475px;
+        left: auto;
 
-        width: 280px;
+        width: 475px;
         height: 100vh;
 
-        background: #ffffff;
+        background: #FAFBFF;
 
         display: flex;
         flex-direction: column;
         align-items: flex-start;
 
-        padding: 24px;
+        padding: 0;
 
-        transition: 0.4s ease;
+        transition: right 0.35s ease;
 
         z-index: 3000;
 
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.08);
     }
 
-
-    /* Open sidebar */
+    /* OPEN */
 
     #menu-toggle:checked ~ .nav-container {
-        left: 0;
+        right: 0;
     }
 
 
-    /* =====================================================
+    /* =========================
        SIDEBAR HEADER
-       ===================================================== */
+    ========================= */
 
     .sidebar-header {
         width: 100%;
+        height: 58px;
+
+        padding: 0 16px;
 
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        margin-bottom: 40px;
+        margin: 0;
     }
 
     .sidebar-header .logo img {
-        width: 158.71px;
-        height: 58px;
+        width: 158px;
+        height: auto;
+        display: block;
     }
 
 
-    /* Close button */
+    /* CLOSE BUTTON */
 
     .close-icon {
-        font-size: 32px;
+        font-size: 28px;
+        font-weight: 300;
         line-height: 1;
 
         color: #4356D6;
 
         cursor: pointer;
+
+        padding: 5px;
     }
 
 
-    /* =====================================================
-       MOBILE NAV LINKS
-       ===================================================== */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     .nav-container .nav-links {
-        width: 100%;
-        height: auto;
+        width: 282px;
+
+        margin: 40px 0 0 16px;
+        padding: 0;
 
         display: flex;
         flex-direction: column;
@@ -406,15 +414,16 @@ nav {
         gap: 26px;
     }
 
-
     .nav-container .nav-links li {
         width: 100%;
+        list-style: none;
     }
-
 
     .nav-container .nav-links a {
         width: 100%;
-        height: auto;
+
+        display: flex;
+        align-items: center;
 
         padding: 0;
 
@@ -422,69 +431,97 @@ nav {
         font-size: 15px;
         font-weight: 400;
 
+        color: #000;
+        text-decoration: none;
+
         gap: 14px;
     }
 
+    /* ACTIVE HOME */
 
-    /* Mobile icons */
+    .nav-container .nav-links a.active {
+        color: #4356D6;
+        font-weight: 500;
+    }
+
+    /* ICONS */
 
     .nav-container .nav-icon {
-        display: block;
-
         width: 18px;
         height: 18px;
+
+        display: block;
 
         object-fit: contain;
     }
 
 
-    /* =====================================================
-       MOBILE CONTACT BUTTON
-       ===================================================== */
+    /* =========================
+       CONTACT BUTTON
+    ========================= */
 
     .mobile-only {
         display: block;
 
-        width: 100%;
-
+        width: 282px;
         margin-top: auto;
+        margin-left: 16px;
+        margin-bottom: 16px;
     }
 
     .mobile-only .full-width {
-        width: 100%;
+        width: 282px;
+        height: 46px;
+        background-color: #4356D6;
+        color: #ffffff;
+        border-radius: 8px;
+    }
+}
+
+
+/* =========================
+   MOBILE 375px
+========================= */
+
+@media (max-width: 600px) {
+
+    .nav-container {
+        width: 282px;
+        right: -282px;
     }
 
-
-    /* =====================================================
-       OVERLAY
-       ===================================================== */
-
-    .menu-overlay {
-        position: fixed;
-
-        top: 0;
-        left: 0;
-
-        width: 100%;
-        height: 100%;
-
-        background: rgba(0, 0, 0, 0.45);
-
-        opacity: 0;
-        visibility: hidden;
-
-        transition: 0.3s ease;
-
-        z-index: 2000;
+    #menu-toggle:checked ~ .nav-container {
+        right: 0;
     }
 
-
-    #menu-toggle:checked ~ .menu-overlay {
-        opacity: 1;
-        visibility: visible;
-
-        display: block;
+    .sidebar-header {
+        padding: 0 16px;
     }
+
+    .sidebar-header .logo img {
+        width: 158px;
+    }
+
+    .nav-container .nav-links {
+        width: 250px;
+
+        margin-left: 16px;
+        margin-top: 40px;
+
+        gap: 26px;
+    }
+
+    .mobile-only {
+        width: 250px;
+        margin-left: 16px;
+    }
+
+    .mobile-only .full-width {
+        width: 250px;
+    }
+    #menu-toggle:checked ~ .hamburger-icon {
+    display: none;
+}
 }
 
 /* Get Started Button */
@@ -872,7 +909,7 @@ nav {
    MOBILE
 ========================================================= */
 
-@media (max-width: 768px) and(max-width: 1024px) {
+@media (max-width: 768px) {
     .hero{
         width: 100%;
         height: auto;
