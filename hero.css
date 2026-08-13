@@ -13,7 +13,7 @@
   /* Brand Colors */
   --primary-blue: #2563eb;
   --primary-hover: #1d4ed8;
-  --text-dark: #0f172a;
+  --text-dark: #000000;
   --text-muted: #475569;
   --bg-light: #f8fafc;
   --border-color: #e2e8f0;
@@ -144,6 +144,11 @@ nav {
   display: flex;
   align-items: center;
 }
+.nav-links-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 /* Container Frame (Frame 1212) */
 .nav-links {
@@ -155,6 +160,7 @@ nav {
   margin: 0;
   padding: 0;
 }
+
 
 /* Individual Nav Link Items */
 .nav-links a{
@@ -186,14 +192,15 @@ nav {
 }
 
 .hero-container {
-  max-width: var(--container-max-width);
-  margin: 0 auto;
-  padding: 0 var(--padding-x-desktop);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 60px;
+    width: min(100% - 80px, 1240px);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
 }
+
 
 .hero-content h1 {
   font-size: 64px;
@@ -220,8 +227,9 @@ nav {
 .hero-content p {
   margin-top: 24px;
   font-size: 18px;
-  line-height: 1.6;
-  color: var(--text-muted);
+  line-height: 32px;
+  font-weight: 400;
+  color: var(--text-dark);
 }
 
 .features {
@@ -230,14 +238,16 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  color: var(--text-dark)
 }
 
 .features li {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
   color: var(--text-dark);
 }
 
@@ -273,10 +283,22 @@ nav {
   color: var(--primary-blue);
 }
 
-.hero-image .main-banner {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+
+.hero-image {
+    width: 100%;
+    max-width: 739.13px;
+    display: flex;
+    height: auto;
+    max-height: 607px;
+    justify-content: flex-end;
+}
+
+.main-banner {
+    width: 100%;
+    max-width: 739.13px;
+    height: auto;
+    max-height: 607px;
+    display: block;
 }
 
 /* ==========================================================================
