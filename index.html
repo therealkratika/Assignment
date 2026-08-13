@@ -14,15 +14,25 @@
     <header>
         <nav>
 
-            <div class="logo">
-                <img src="Assets/Logo.png" alt="Logo">
+            <div class="logo-frame">
+                <img src="Assets/Logo.png" alt="Logo" class="logo-img">
             </div>
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
 
-            <!--  menu icon -->
-            <label for="menu-toggle" class="hamburger-icon">
-                <img src="Assets/Menu.png" alt="Menu">
-            </label>
+            <div class="nav-actions">
+                <!-- Mobile Contact button next to hamburger (placed before hamburger) -->
+                <div class="contact-btn-mobile mobile-only">
+                    <button class="btn-primary-blue">
+                        <img src="Assets/Contact-icon.png" alt="Contact" style="width:16px;height:16px;">
+                        Contact Us
+                    </button>
+                </div>
+
+                <!--  menu icon -->
+                <label for="menu-toggle" class="hamburger-icon">
+                    <img src="Assets/Menu.png" alt="Menu">
+                </label>
+            </div>
 
             <!-- Background overlay for mobile sidebar -->
             <label for="menu-toggle" class="menu-overlay"></label>
