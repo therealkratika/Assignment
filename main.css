@@ -1,0 +1,1928 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Brand Colors */
+  --primary-blue: #4356D6;
+  --primary-hover: #1d4ed8;
+  --text-dark: #000000;
+  --text-muted: #475569;
+  --bg-light: #f8fafc;
+  --border-color: #e2e8f0;
+  --white: #ffffff;
+
+  /* Typography Scale */
+  --font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+
+  /* Responsive Spacing Container */
+  --container-max-width: 1440px;
+  --padding-x-desktop: 80px;
+  --padding-x-tablet: 40px;
+  --padding-x-mobile: 20px;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Helper Display Classes */
+.desktop-only { display: block; }
+.mobile-only { display: none; }
+
+/* Buttons Base */
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: auto;
+  transition: all 0.2s ease;
+}
+
+.btn-primary-blue {
+  background-color: #4356D6;
+  color: var(--white);
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary-blue:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* ==========================================================================
+   2. NAVBAR & MOBILE SIDEBAR DRAWER
+   ========================================================================== */
+header {
+  width: 100%;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--padding-x-desktop);
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-frame {
+  display: inline-flex;
+  align-items: center;        /* Matches Figma auto-layout vertical centering */
+  justify-content: flex-start;
+  width: 158.71px;            /* Exact Figma Hug/Frame width */
+  height: 58px;               /* Exact Figma Height */
+  gap: 18px;                  /* Exact Gap setting from Auto Layout panel */
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/* Inner Logo Image */
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;        /* Prevents image distortion */
+  display: block;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Hide checkbox & hamburger defaults on desktop */
+.menu-toggle,
+.hamburger-icon,
+.menu-overlay,
+.sidebar-header {
+  display: none;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+.nav-links-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container Frame (Frame 1212) */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;            /* Exact 26px spacing between links from Figma */
+  height: 41px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Individual Nav Link Items */
+.nav-links a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+  white-space: nowrap;  /* Prevents text wrapping */
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: var(--primary-blue);
+}
+
+.nav-icon {
+  display: none; /* Hide link icons on desktop */
+}
+
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
+.hero {
+  background-color: #FAFBFF;
+ 
+}
+.hero-container {
+    max-width: 1345.13px;
+    width: 100%;
+    margin-left: 72px;
+    margin-right: 20px;
+    margin-top: 102px;
+    margin-bottom: 52px;
+    display: grid;
+    grid-template-columns: 606px 739.13px;
+    align-items: center;
+}
+.hero-content{
+  width: 100%;
+  max-width: 606px;
+  min-width: 0;
+  height: 583px;
+  
+  gap: 26px;
+}
+.hero-content h1 {
+  width: 100%;
+    max-width: 606px;
+    height: auto;
+    max-height: 255px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 85px;
+
+    color: #000;
+    margin: 0;
+}
+
+.hero-content .highlight {
+  color: var(--primary-blue);
+  position: relative;
+  display: inline-block;
+}
+
+.hero-content .underline {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.hero-content p {
+    width: 606px;
+    height: 96px;
+    max-width: 100%;
+
+    margin-top: 24px;
+
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 400;
+
+    color: var(--text-dark);
+}
+
+.features {
+  list-style: none;
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--text-dark)
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--text-dark);
+}
+
+.features img {
+  width: 24px;
+  height: 24px;
+}
+
+.hero-actions {
+  margin-top: 36px;
+  display: flex;
+  gap: 24px;
+}
+
+.btn-solid {
+  width: 213px;
+  height: 46px;
+
+  background: #4356D6;
+  color: var(--white);
+
+  padding: 14px 22px;
+  gap: 10px;
+
+  border: 2px solid #4356D6;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+
+  box-sizing: border-box;
+}
+
+.btn-solid:hover {
+  background: linear-gradient(180deg, #3f58d8 0%, #384dd0 100%);
+}
+
+.btn-outline {
+  width: 213px;
+  height: 46px;
+
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid #4356D6;
+  color: #1d2433;
+
+  padding: 14px 22px;
+  gap: 10px;
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  color: #4356D6;
+  box-sizing: border-box;
+}
+.btn-outline:hover {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+
+.hero-image {
+    width: 739.15px;
+    height: auto;
+    display: flex;
+    height: 607px;
+    align-items: center;
+    
+}
+
+.main-banner {
+    max-height: auto;
+    width: 739.13px;
+    height: 607px;
+    display: block;
+}
+
+/* ==========================================================================
+   4. COMPLIANCE IMPORTANCE SECTION
+   ========================================================================== */
+.compliance-section {
+  width: 100%;
+  background: #fff;
+  padding: 50px 100px;
+  box-sizing: border-box;
+}
+
+.top-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.heading-wrapper {
+    position: relative;
+    overflow: visible;
+}
+
+.heading-wrapper h2 {
+    width: 604px;
+    height: 140px;
+
+    margin: 0 0px 20px 0px;
+    padding: 0;
+
+    font-size: 48px;
+    line-height: 70px;
+    font-weight: 600;
+
+    color: var(--text-dark);
+    text-align: left;
+    display: block;
+}
+
+.heading-wrapper .blue-text {
+    color: var(--primary-blue);
+}
+.arrow-vector {
+    position: absolute;
+
+    width: 35px;
+    height: auto;
+
+    left: 600px;
+    top: 970px;
+
+    right: auto;
+    bottom: auto;
+
+    margin: 0;
+    padding: 0;
+
+    transform: rotate(1deg);
+    transform-origin: center;
+
+    z-index: 10;
+    display: block;
+    pointer-events: none;
+}
+.content-box .description {
+  font-size: 18px;
+  line-height: 32px;
+  color: var(--text-dark);
+  align-items: left;
+  text-align: left;
+  width: 100%;
+  max-width: 720px; /* match heading length */
+  margin: 0 auto 0; /* no extra gap; heading provides 20px */
+}
+
+/* Bottom Content Layout */
+.bottom-content {
+  padding-top: 76px;
+  display: grid;
+  width: 1240px;
+  grid-template-columns: 594px 594px;
+  gap: 52px;
+}
+
+.illustration-box {
+  position: relative;
+  width: 554px;
+  height: 554px;
+  padding: 35px;
+  margin-bottom: 52px;
+}
+
+.illustration-box.section2-img {
+  width: 554px;
+  height: 554px;
+  justify-self: center;
+  border-radius: 16px;
+}
+
+.zigzag-container {
+  position: absolute;
+  left:-100px;
+  align-items: start;
+  top: 590px;
+  width: 137.33px;
+  height: 34.17px;
+}
+
+.bottom-zigzag {
+  width: 137.33px;
+  height: 34.17px;
+  display: block;
+}
+
+.cards-container {
+  width: 594px;
+  height: 594px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.info-card {
+  width: 594px;
+  height: 142px;
+
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+
+  box-sizing: border-box;
+  background: #FAFBFF;
+  border: 1px solid #E2E7FF;
+  border-radius: 8px;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.info-card-icon {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box img {
+   width: 36px;
+  height: 36px;
+    margin-right: 26px;
+
+}
+
+.card-text h3 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.card-text p {
+  font-size: 18px;
+  line-height: 32px;
+  color: var(--text-dark);
+}
+/* =========================================================
+   1440px → 1021px
+   DESKTOP SHRINK
+   ========================================================= */
+
+@media (max-width: 1300px) and (min-width: 1021px) {
+
+    /* ---------- NAVBAR ---------- */
+
+    nav {
+        padding: 0 40px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        padding: 70px 0 40px;
+    }
+
+    .hero-container {
+        width: calc(100% - 80px);
+        max-width: 1100px;
+    }
+
+    .hero-content {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hero-content h1 {
+        width: 100%;
+        max-width: 520px;
+
+        font-size: 52px;
+        line-height: 68px;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-banner {
+        width: 100%;
+        height: auto;
+    }
+
+
+    /* ---------- COMPLIANCE ---------- */
+
+    .compliance-section {
+        padding: 50px 60px;
+    }
+
+    .top-content {
+        width: 100%;
+        gap: 30px;
+    }
+
+    .heading-wrapper h2 {
+        width: 100%;
+        max-width: 520px;
+        height: auto;
+
+        font-size: 42px;
+        line-height: 58px;
+    }
+
+    .content-box .description {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .bottom-content {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .illustration-box {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .cards-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .info-card {
+        width: 100%;
+    }
+    .arrow-vector {
+        position: absolute;
+        left: 40%;
+        top: 890px;
+        width: 35px;
+        height: auto;
+        z-index: 10;
+    }
+}
+/* =========================================================
+   TABLET : 1020px → 768px
+   ========================================================= */
+
+@media (max-width: 1020px) and (min-width: 768px) {
+
+    /* ================= NAVBAR ================= */
+
+    nav {
+        height: 72px;
+        padding: 0 40px;
+    }
+
+    /* Hide desktop navigation */
+    /* =========================
+   HAMBURGER DRAWER
+========================= */
+
+/* Hide checkbox */
+.menu-toggle {
+    display: none;
+}
+
+
+/* HAMBURGER */
+
+.hamburger-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.hamburger-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+
+/* HIDE HAMBURGER WHEN OPEN */
+
+#menu-toggle:checked ~ .hamburger-icon {
+    display: none;
+}
+
+
+/* =========================
+   OVERLAY
+========================= */
+
+.menu-overlay {
+    display: block;
+
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    z-index: 9998;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+#menu-toggle:checked ~ .menu-overlay {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* =========================
+   RIGHT SIDEBAR
+========================= */
+
+.nav-container {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: 475px;
+    max-width: 85vw;
+    height: 100vh;
+
+    background: #FAFBFF;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 9999;
+
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* OPEN SIDEBAR */
+
+#menu-toggle:checked ~ .nav-container {
+    transform: translateX(0);
+}
+
+
+/* =========================
+   SIDEBAR HEADER
+========================= */
+
+.nav-container .sidebar-header {
+    width: 100%;
+    height: 58px;
+
+    padding: 0 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-shrink: 0;
+}
+
+
+/* LOGO */
+
+.nav-container .sidebar-header .logo img {
+    width: 158px;
+    height: auto;
+
+    display: block;
+    object-fit: contain;
+}
+
+
+/* CLOSE X */
+
+.nav-container .close-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    color: #4356D6;
+
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   MENU WRAPPER
+========================= */
+
+.nav-menu-wrapper {
+    width: 100%;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 25px 16px 16px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-container .nav-links-container {
+    position: static;
+
+    width: 100%;
+
+    padding: 0;
+    margin: 0;
+
+    transform: none;
+}
+
+
+.nav-container .nav-links {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 0;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.nav-container .nav-links li {
+    width: 100%;
+    height: 66px;
+}
+
+
+.nav-container .nav-links li a {
+    width: 100%;
+    height: 66px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 0;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #222;
+    text-decoration: none;
+}
+
+
+.nav-container .nav-links li a.active {
+    color: #4356D6;
+}
+
+
+/* ICONS */
+
+.nav-container .nav-links .nav-icon {
+    width: 24px;
+    height: 24px;
+
+    display: block;
+
+    flex: 0 0 24px;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   SIDEBAR CONTACT BUTTON
+========================= */
+
+.nav-container .sidebar-footer {
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 0;
+}
+
+
+.nav-container .sidebar-footer .btn-primary-blue {
+    width: 100%;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+    .contact-btn-desktop {
+        display: none;
+    }
+
+    /* Show hamburger */
+    .hamburger-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+    }
+
+    .hamburger-icon img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+    }
+    /* Hide hamburger when sidebar is open */
+#menu-toggle:checked ~ .hamburger-icon {
+    display: none;
+}
+
+    /* Right side */
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    /* Contact button */
+    .contact-btn-mobile {
+        display: block;
+    }
+
+    .contact-btn-mobile .btn-primary-blue {
+        height: 44px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+
+    /* ================= HERO ================= */
+
+    .hero {
+        padding: 60px 40px 40px;
+    }
+
+    .hero-container {
+        width: 100%;
+        max-width: 636px;
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        width: 100%;
+        max-width: 636px;
+        height: auto;
+
+        font-size: 46px;
+        line-height: 60px;
+
+        text-align: center;
+    }
+
+    .hero-content p {
+        width: 100%;
+        max-width: 636px;
+
+        margin-top: 24px;
+
+        font-size: 18px;
+        line-height: 32px;
+
+        text-align: center;
+    }
+
+    .features {
+        width: 100%;
+        max-width: 636px;
+
+        margin-top: 28px;
+
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .features li {
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+    .hero-actions {
+        justify-content: center;
+        margin-top: 36px;
+    }
+
+
+    /* ================= HERO IMAGE ================= */
+
+    .hero-image {
+        width: 100%;
+        max-width: 636px;
+
+        height: auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-top: 16px;
+    }
+
+    .main-banner {
+        width: 636px;
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    /* ================= COMPLIANCE SECTION ================= */
+
+    .compliance-section {
+        width: 100%;
+        padding: 60px 40px;
+        overflow: hidden;
+    }
+
+    .top-content {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 20px;
+    }
+
+    .heading-wrapper {
+        width: 100%;
+        max-width: 636px;
+    }
+
+    .heading-wrapper h2 {
+        width: 100%;
+        height: auto;
+
+        font-size: 46px;
+        line-height: 60px;
+
+        text-align: center;
+    }
+
+    .heading-wrapper .title-line {
+        display: block;
+    }
+
+    .content-box {
+        width: 100%;
+        max-width: 636px;
+    }
+
+    .content-box .description {
+        width: 100%;
+        max-width: 636px;
+        height: auto;
+
+        font-size: 18px;
+        line-height: 32px;
+
+        text-align: center;
+    }
+
+
+    /* ================= BOTTOM CONTENT ================= */
+
+    .bottom-content {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 20px;
+
+        padding-top: 40px;
+    }
+
+
+    /* ================= ILLUSTRATION ================= */
+
+    .illustration-box {
+        width: 636px;
+        max-width: 100%;
+        height: auto;
+
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .section2-img {
+        width: 100%;
+        max-width: 594px;
+        height: auto;
+
+        padding: 0;
+    }
+
+
+    /* ================= CARDS ================= */
+
+    .cards-container {
+        width: 100%;
+        max-width: 636px;
+
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 0;
+    }
+
+    .info-card {
+        width: 100%;
+        height: 142px;
+
+        padding: 20px;
+
+        display: flex;
+        flex-direction: row;
+
+        align-items: flex-start;
+
+        gap: 11px;
+    }
+
+    .icon-box {
+        width: 36px;
+        height: 36px;
+
+        flex: 0 0 36px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-right: 0;
+    }
+
+    .icon-box img {
+        width: 36px;
+        height: 36px;
+
+        margin-right: 0;
+    }
+
+    .card-text {
+        width: auto;
+        height: auto;
+
+        flex: 1;
+        text-align: left;
+    }
+
+    .card-text h3 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .card-text p {
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+
+    /* ================= DECORATIVE ELEMENTS ================= */
+
+    .arrow-vector {
+        /* don't use fixed desktop position on tablet */
+        left: auto;
+        right: 12%;
+        top: auto;
+    }
+
+    .zigzag-container {
+        left: 0;
+        top: auto;
+    }
+
+}
+@media (max-width: 767px) and (min-width: 375px) {
+
+    /* =====================================================
+       NAVBAR
+       ===================================================== */
+
+    nav {
+        height: 64px;
+        padding: 0 20px;
+        position: relative;
+    }
+
+    .logo-frame {
+        width: 110px;
+        height: 48px;
+    }
+
+    /* Hide desktop contact */
+    .contact-btn-desktop {
+        display: none;
+    }
+
+    /* Hide top mobile Contact Us */
+    .contact-btn-mobile {
+        display: none;
+    }
+
+    /* =====================================================
+       HAMBURGER
+       ===================================================== */
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .hamburger-icon {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 28px;
+        height: 28px;
+
+        cursor: pointer;
+
+        z-index: 10001;
+    }
+
+    .hamburger-icon img {
+        width: 24px;
+        height: 24px;
+
+        object-fit: contain;
+    }
+
+    /* Hide hamburger when drawer is open */
+
+    #menu-toggle:checked ~ .nav-actions .hamburger-icon {
+        display: none;
+    }
+
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+    /* =====================================================
+       DARK OVERLAY
+       ===================================================== */
+
+    .menu-overlay {
+        display: block;
+
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100vw;
+        height: 100vh;
+
+        background: rgba(0, 0, 0, 0.45);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        z-index: 9998;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+    /* Show overlay when menu opens */
+
+    #menu-toggle:checked ~ .menu-overlay {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+
+    /* =====================================================
+       RIGHT SIDE HAMBURGER DRAWER
+       ===================================================== */
+
+    .nav-container {
+        position: fixed;
+
+        top: 0;
+        right: 0;
+
+        width: 282px;
+        max-width: 85vw;
+        height: 100vh;
+
+        background: #FAFBFF;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 0;
+        margin: 0;
+
+        z-index: 9999;
+
+        transform: translateX(100%);
+
+        transition: transform 0.35s ease;
+
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Open drawer */
+
+    #menu-toggle:checked ~ .nav-container {
+        transform: translateX(0);
+    }
+
+
+    /* =====================================================
+       SIDEBAR HEADER
+       ===================================================== */
+
+    .nav-container .sidebar-header {
+        width: 100%;
+        height: 64px;
+
+        padding: 0 16px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+
+        flex-shrink: 0;
+    }
+
+    /* Sidebar logo */
+
+    .nav-container .sidebar-header .logo img {
+        width: 158px;
+        height: auto;
+
+        display: block;
+
+        object-fit: contain;
+    }
+
+
+    /* =====================================================
+       CLOSE X
+       ===================================================== */
+
+    .nav-container .close-icon {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 30px;
+        height: 30px;
+
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 1;
+
+        color: #4356D6;
+
+        cursor: pointer;
+
+        padding: 0;
+    }
+
+
+    /* =====================================================
+       SIDEBAR MENU WRAPPER
+       ===================================================== */
+
+    .nav-menu-wrapper {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 30px 16px 16px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       NAV LINKS
+       ===================================================== */
+
+    .nav-container .nav-links-container {
+        position: static;
+
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        transform: none;
+    }
+
+    .nav-container .nav-links {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+    }
+
+    .nav-container .nav-links li {
+        width: 100%;
+        height: 58px;
+    }
+
+    .nav-container .nav-links li a {
+        width: 100%;
+        height: 58px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 14px;
+
+        padding: 0;
+
+        font-family: 'Inter', sans-serif;
+
+        font-size: 15px;
+        font-weight: 500;
+
+        color: #000000;
+
+        text-decoration: none;
+    }
+
+    /* Active link */
+
+    .nav-container .nav-links li a.active {
+        color: #4356D6;
+    }
+
+    /* Icons */
+
+    .nav-container .nav-links .nav-icon {
+        display: block;
+
+        width: 18px;
+        height: 18px;
+
+        flex: 0 0 18px;
+
+        object-fit: contain;
+    }
+
+
+    /* =====================================================
+       SIDEBAR CONTACT BUTTON
+       ===================================================== */
+
+    .nav-container .sidebar-footer {
+        width: 100%;
+
+        margin-top: auto;
+
+        padding: 0;
+    }
+
+    .nav-container .sidebar-footer .btn-primary-blue {
+        width: 100%;
+        height: 46px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        font-size: 16px;
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+        padding: 40px 20px 30px;
+    }
+
+    .hero-container {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        height: auto;
+
+        text-align: center;
+    }
+
+
+    /* ---------- HERO HEADING ---------- */
+
+    .hero-content h1 {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+
+        font-size: 36px;
+        line-height: 44px;
+
+        text-align: center;
+    }
+
+    .hero-content .highlight {
+        display: inline-block;
+    }
+
+    .hero-content .underline {
+        bottom: -5px;
+    }
+
+
+    /* ---------- HERO PARAGRAPH ---------- */
+
+    .hero-content p {
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: 28px;
+
+        font-size: 16px;
+        line-height: 28px;
+
+        text-align: center;
+    }
+
+
+    /* ---------- FEATURES ---------- */
+
+    .features {
+        width: 100%;
+
+        margin-top: 28px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 6px;
+
+        text-align: left;
+    }
+
+    .features li {
+        width: 100%;
+
+        display: flex;
+
+        align-items: flex-start;
+
+        gap: 12px;
+
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .features img {
+        width: 22px;
+        height: 22px;
+
+        flex-shrink: 0;
+    }
+
+
+    /* ---------- HERO BUTTONS ---------- */
+
+    .hero-actions {
+        width: 100%;
+
+        margin-top: 28px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .btn-solid,
+    .btn-outline {
+        width: 100%;
+        height: 46px;
+
+        font-size: 16px;
+    }
+
+
+    /* ---------- HERO IMAGE ---------- */
+
+    .hero-image {
+        width: 100%;
+        max-width: 100%;
+
+        height: auto;
+
+        margin-top: 16px;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-banner {
+        width: 100%;
+        max-width: 100%;
+
+        height: auto;
+    }
+
+
+    /* =====================================================
+       COMPLIANCE SECTION
+       ===================================================== */
+
+    .compliance-section {
+        width: 100%;
+
+        padding: 50px 20px;
+
+        overflow: hidden;
+    }
+
+
+    /* ---------- TOP CONTENT ---------- */
+
+    .top-content {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 20px;
+    }
+
+
+    /* ---------- HEADING ---------- */
+
+    .heading-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .heading-wrapper h2 {
+        width: 100%;
+        height: auto;
+
+        margin: 0;
+
+        font-size: 34px;
+        line-height: 44px;
+
+        text-align: center;
+    }
+
+    .heading-wrapper .title-line {
+        display: block;
+        white-space: normal;
+    }
+
+
+    /* ---------- DESCRIPTION ---------- */
+
+    .content-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .content-box .description {
+        width: 100%;
+        max-width: 100%;
+
+        height: auto;
+
+        font-size: 16px;
+        line-height: 28px;
+
+        text-align: center;
+    }
+
+
+    /* =====================================================
+       BOTTOM CONTENT
+       ===================================================== */
+
+    .bottom-content {
+        width: 100%;
+
+        padding-top: 30px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 20px;
+    }
+
+
+    /* ---------- ILLUSTRATION ---------- */
+
+    .illustration-box {
+        width: 100%;
+        max-width: 100%;
+
+        height: auto;
+
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+
+        justify-content: center;
+    }
+
+    .section2-img {
+        width: 100%;
+        max-width: 100%;
+
+        height: auto;
+
+        padding: 0;
+    }
+
+
+    /* ---------- ZIGZAG ---------- */
+
+    .zigzag-container {
+        left: 0;
+        top: auto;
+    }
+
+    .bottom-zigzag {
+        width: 110px;
+        height: auto;
+    }
+
+
+    /* =====================================================
+       CARDS
+       ===================================================== */
+
+    .cards-container {
+        width: 100%;
+        max-width: 100%;
+
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 16px;
+
+        padding: 0;
+    }
+
+    .info-card {
+        width: 100%;
+        height: auto;
+
+        min-height: 120px;
+
+        padding: 16px;
+
+        display: flex;
+        flex-direction: row;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+
+    /* ---------- CARD ICON ---------- */
+
+    .icon-box {
+        width: 32px;
+        height: 32px;
+
+        flex: 0 0 32px;
+
+        margin: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon-box img {
+        width: 32px;
+        height: 32px;
+
+        margin: 0;
+    }
+
+
+    /* ---------- CARD TEXT ---------- */
+
+    .card-text {
+        width: auto;
+        height: auto;
+
+        flex: 1;
+
+        text-align: left;
+    }
+
+    .card-text h3 {
+        font-size: 20px;
+        line-height: 28px;
+
+        margin-bottom: 4px;
+    }
+
+    .card-text p {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+
+    /* ---------- ARROW ---------- */
+
+    .arrow-vector {
+        display: none;
+    }
+
+}
