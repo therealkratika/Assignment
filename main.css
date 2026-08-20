@@ -1949,7 +1949,7 @@ nav {
 
         display: flex;
         flex-direction: column;
-
+        align-items: center;
         gap: 26px;
 
         padding: 0;
