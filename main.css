@@ -128,7 +128,8 @@ nav {
 .menu-toggle,
 .hamburger-icon,
 .menu-overlay,
-.sidebar-header {
+.sidebar-header,
+.sidebar-footer-mobile-only{
   display: none;
 }
 
@@ -137,11 +138,13 @@ nav {
   align-items: center;
 }
 .nav-links-container {
+    max-width: 630px;
+    width: 100%;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-
+    gap: 26px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -533,9 +536,12 @@ nav {
 
 @media (max-width: 1300px) and (min-width: 1021px) {
 
-    /* ---------- NAVBAR ---------- */
+    /* =====================================================
+       NAVBAR
+       ===================================================== */
 
     nav {
+        width: 100%;
         padding: 0 40px;
     }
 
@@ -548,20 +554,37 @@ nav {
     }
 
 
-    /* ---------- HERO ---------- */
+    /* =====================================================
+       HERO
+       ===================================================== */
 
     .hero {
         padding: 70px 0 40px;
+        overflow: hidden;
     }
 
     .hero-container {
         width: calc(100% - 80px);
         max-width: 1100px;
+
+        margin: 0 auto;
+
+        display: grid;
+
+        /* IMPORTANT:
+           Do NOT use 606px + 739px here */
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+        gap: 30px;
+
+        align-items: center;
     }
 
     .hero-content {
         width: 100%;
+        max-width: 100%;
         min-width: 0;
+        height: auto;
     }
 
     .hero-content h1 {
@@ -572,68 +595,142 @@ nav {
         line-height: 68px;
     }
 
+    .hero-content p {
+        width: 100%;
+        max-width: 520px;
+    }
+
     .hero-image {
         width: 100%;
+        max-width: 100%;
         height: auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .main-banner {
         width: 100%;
+        max-width: 100%;
         height: auto;
     }
 
 
-    /* ---------- COMPLIANCE ---------- */
+    /* =====================================================
+       COMPLIANCE SECTION
+       ===================================================== */
 
     .compliance-section {
+        width: 100%;
+        max-width: 1100px;
+
+        margin: 0 auto;
+
         padding: 50px 60px;
+
+        box-sizing: border-box;
     }
 
     .top-content {
         width: 100%;
+
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
         gap: 30px;
+
+        align-items: center;
+    }
+
+    .heading-wrapper {
+        width: 100%;
+        max-width: 100%;
     }
 
     .heading-wrapper h2 {
         width: 100%;
         max-width: 520px;
+
         height: auto;
 
         font-size: 42px;
         line-height: 58px;
     }
 
+    .content-box {
+        width: 100%;
+        min-width: 0;
+    }
+
     .content-box .description {
         width: 100%;
-        max-width: 600px;
+        max-width: 100%;
     }
+
+
+    /* =====================================================
+       BOTTOM CONTENT
+       ===================================================== */
 
     .bottom-content {
         width: 100%;
+
+        display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
         gap: 30px;
+
+        box-sizing: border-box;
     }
 
     .illustration-box {
         width: 100%;
+        max-width: 100%;
+
         height: auto;
+
         padding: 20px;
+
+        box-sizing: border-box;
+    }
+
+    .section2-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
     }
 
     .cards-container {
         width: 100%;
+        max-width: 100%;
+
         height: auto;
+
+        box-sizing: border-box;
     }
 
     .info-card {
         width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box;
     }
+
+
+    /* =====================================================
+       ARROW
+       ===================================================== */
+
     .arrow-vector {
         position: absolute;
-        left: 40%;
-        top: 890px;
+
         width: 35px;
         height: auto;
+
+        left: 40%;
+        top: 890px;
+
         z-index: 10;
     }
 }
@@ -898,25 +995,34 @@ nav {
 ========================= */
 
 .nav-container .sidebar-footer-mobile-only {
-    width:172px;
-    max-width: 100%;
+    width: 172px;
+    max-width: calc(100% - 32px);
 
     margin-top: auto;
+    margin-bottom: 20px;
 
     padding: 0;
-}
 
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10000;
+}
 
 .nav-container .sidebar-footer-mobile-only .btn-primary-blue {
     width: 100%;
     height: 46px;
 
-    display: flex;
-
+    display: flex !important;
     align-items: center;
     justify-content: center;
-}
 
+    visibility: visible !important;
+    opacity: 1 !important;
+}
     .contact-btn-desktop {
         display: none;
     }
@@ -1315,17 +1421,13 @@ nav {
         pointer-events: auto;
     }
 
-
-    /* =====================================================
-       RIGHT SIDE HAMBURGER DRAWER
-       ===================================================== */
 .nav-container {
     position: fixed;
     top: 0;
     right: 0;
 
-    width: 282px;
-    max-width: 85vw;
+    max-width: 327px;
+    width: 100%;
     height: 100vh;
 
     background: #FAFBFF;
@@ -1409,6 +1511,7 @@ nav {
 
     .nav-menu-wrapper {
     max-width: 282px;
+    height: 546px;
     width: 100%;
     flex: 1;
     min-height: 0;
@@ -1417,9 +1520,10 @@ nav {
     flex-direction: column;
 
     padding-top: 50px;
-    padding-left: 16px;
-
+    gap: 36px;
     box-sizing: border-box;
+
+    overflow-y: auto;
 }
 
 
@@ -1506,23 +1610,39 @@ nav {
        ===================================================== */
 
     .nav-container .sidebar-footer-mobile-only {
+    max-width: 282px;
     width: 100%;
+    height: 46px;
+
     margin-top: auto;
-    padding: 0px;
-    box-sizing: border-box;
+    margin-bottom: 20px;
+
+    padding: px 14px;
+
+    display: flex !important;
+    align-items: center;
+
     flex-shrink: 0;
-    border-radius: 8px;
+
+    position: relative;
+    z-index: 10001;
 }
 
 .nav-container .sidebar-footer-mobile-only .btn-primary-blue {
     width: 100%;
     height: 46px;
 
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
+
+    padding: 0;
+
     font-size: 18px;
-    line-height: 32px;
+    line-height: 46px;
+
+    visibility: visible !important;
+    opacity: 1 !important;
 }
     /* =====================================================
        HERO
