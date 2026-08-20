@@ -1721,23 +1721,23 @@ nav {
 }
 
     .features li {
+        max-width: auto;
         width: 100%;
 
         display: flex;
 
         align-items: flex-start;
-
-        gap: 12px;
+        gap: 16px;
 
         font-size: 18px;
         line-height: 32px;
     }
 
-    .features img {
+    .features li img {
         width: 24px;
         height: 24px;
-
-        flex-shrink: 0;
+        align-self: self-start;
+        object-fit: contain;
     }
 
 
