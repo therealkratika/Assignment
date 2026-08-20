@@ -7,7 +7,6 @@
 }
 
 :root {
-  /* Brand Colors */
   --primary-blue: #4356D6;
   --primary-hover: #1d4ed8;
   --text-dark: #000000;
@@ -643,19 +642,10 @@ nav {
    ========================================================= */
 
 @media (max-width: 1020px) and (min-width: 768px) {
-
-    /* ================= NAVBAR ================= */
-
     nav {
         height: 72px;
         padding: 0 40px;
     }
-
-    /* Hide desktop navigation */
-    /* =========================
-   HAMBURGER DRAWER
-========================= */
-
 /* Hide checkbox */
 .menu-toggle {
     display: none;
@@ -688,6 +678,9 @@ nav {
 #menu-toggle:checked ~ .hamburger-icon {
     display: none;
 }
+#menu-toggle:checked ~ .nav-actions .hamburger-icon {
+        display: none;
+    }
 
 
 /* =========================
@@ -735,7 +728,7 @@ nav {
 
     width: 475px;
     max-width: 85vw;
-    height: 100vh;
+    height: 596px;
 
     background: #FAFBFF;
 
@@ -757,14 +750,10 @@ nav {
     transform: translateX(0);
 }
 
-
-/* =========================
-   SIDEBAR HEADER
-========================= */
-
 .nav-container .sidebar-header {
-    width: 100%;
-    height: 58px;
+    width: 475px;
+    max-width: 100%;
+    height: 54px;
 
     padding: 0 16px;
 
@@ -779,8 +768,8 @@ nav {
 /* LOGO */
 
 .nav-container .sidebar-header .logo img {
-    width: 158px;
-    height: auto;
+    width: 122px;
+    height: 34px;
 
     display: block;
     object-fit: contain;
@@ -820,8 +809,8 @@ nav {
     display: flex;
     flex-direction: column;
 
-    padding: 25px 16px 16px;
-
+    padding-top: 50px;
+    padding-left: 16px;
     box-sizing: border-box;
 }
 
@@ -908,8 +897,9 @@ nav {
    SIDEBAR CONTACT BUTTON
 ========================= */
 
-.nav-container .sidebar-footer {
-    width: 100%;
+.nav-container .sidebar-footer-mobile-only {
+    width:172px;
+    max-width: 100%;
 
     margin-top: auto;
 
@@ -917,7 +907,7 @@ nav {
 }
 
 
-.nav-container .sidebar-footer .btn-primary-blue {
+.nav-container .sidebar-footer-mobile-only .btn-primary-blue {
     width: 100%;
     height: 46px;
 
@@ -1062,8 +1052,9 @@ nav {
 
     .compliance-section {
         width: 100%;
-        padding: 60px 40px;
+        padding: 0px;
         overflow: hidden;
+        gap: 20px;
     }
 
     .top-content {
@@ -1099,12 +1090,12 @@ nav {
 
     .content-box {
         width: 100%;
-        max-width: 636px;
+        max-width: 603.5px;
     }
 
     .content-box .description {
         width: 100%;
-        max-width: 636px;
+        max-width: 603.5px;
         height: auto;
 
         font-size: 18px;
@@ -1134,54 +1125,44 @@ nav {
     /* ================= ILLUSTRATION ================= */
 
     .illustration-box {
-        width: 636px;
-        max-width: 100%;
-        height: auto;
+    width: 100%;
+    max-width: 613.17px;
+    height: 594px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        padding: 0;
-        margin: 0;
-
-        display: flex;
-        justify-content: center;
-    }
-
-    .section2-img {
-        width: 100%;
-        max-width: 594px;
-        height: auto;
-
-        padding: 0;
-    }
+.section2-img {
+    width: 100%;
+    max-width: 470px;
+    height: auto;
+    padding: 0%;
+}
 
 
     /* ================= CARDS ================= */
 
     .cards-container {
         width: 100%;
-        max-width: 636px;
-
-        height: auto;
-
+        max-width: 728px;
+        margin: 40px;
         display: flex;
         flex-direction: column;
-
-        gap: 20px;
-
+        gap: 40px;
         padding: 0;
     }
 
     .info-card {
         width: 100%;
+        max-width: 728px;
         height: 142px;
-
         padding: 20px;
-
         display: flex;
-        flex-direction: row;
-
         align-items: flex-start;
-
-        gap: 11px;
+        gap: 26px;
     }
 
     .icon-box {
@@ -1205,11 +1186,12 @@ nav {
     }
 
     .card-text {
-        width: auto;
+        width: 626px;
         height: auto;
-
-        flex: 1;
+        gap: 11px;
+        flex: 1; 
         text-align: left;
+        margin-right: 60px;
     }
 
     .card-text h3 {
@@ -1228,22 +1210,17 @@ nav {
     .arrow-vector {
         /* don't use fixed desktop position on tablet */
         left: auto;
-        right: 12%;
-        top: auto;
+        right: 15%;
+        top: 1480px;
     }
 
     .zigzag-container {
-        left: 0;
-        top: auto;
+        left: -75px;
+        top: 600px;
     }
 
 }
 @media (max-width: 767px) and (min-width: 375px) {
-
-    /* =====================================================
-       NAVBAR
-       ===================================================== */
-
     nav {
         height: 64px;
         padding: 0 20px;
@@ -1306,11 +1283,6 @@ nav {
         gap: 10px;
     }
 
-
-    /* =====================================================
-       DARK OVERLAY
-       ===================================================== */
-
     .menu-overlay {
         display: block;
 
@@ -1347,35 +1319,28 @@ nav {
     /* =====================================================
        RIGHT SIDE HAMBURGER DRAWER
        ===================================================== */
+.nav-container {
+    position: fixed;
+    top: 0;
+    right: 0;
 
-    .nav-container {
-        position: fixed;
+    width: 282px;
+    max-width: 85vw;
+    height: 100vh;
 
-        top: 0;
-        right: 0;
+    background: #FAFBFF;
 
-        width: 282px;
-        max-width: 85vw;
-        height: 100vh;
+    display: flex;
+    flex-direction: column;
 
-        background: #FAFBFF;
+    padding: 0;
+    margin: 0;
 
-        display: flex;
-        flex-direction: column;
+    z-index: 9999;
 
-        padding: 0;
-        margin: 0;
-
-        z-index: 9999;
-
-        transform: translateX(100%);
-
-        transition: transform 0.35s ease;
-
-        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.08);
-    }
-
-    /* Open drawer */
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+}
 
     #menu-toggle:checked ~ .nav-container {
         transform: translateX(0);
@@ -1387,10 +1352,11 @@ nav {
        ===================================================== */
 
     .nav-container .sidebar-header {
-        width: 100%;
-        height: 64px;
+        width: 327px;
+        max-width: 100%;
+        height: 54px;
 
-        padding: 0 16px;
+        padding: 0px;
 
         display: flex;
 
@@ -1403,8 +1369,8 @@ nav {
     /* Sidebar logo */
 
     .nav-container .sidebar-header .logo img {
-        width: 158px;
-        height: auto;
+        width: 122px;
+        height: 34px;
 
         display: block;
 
@@ -1442,16 +1408,19 @@ nav {
        ===================================================== */
 
     .nav-menu-wrapper {
-        width: 100%;
-        height: 100%;
+    max-width: 282px;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
 
-        display: flex;
-        flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-        padding: 30px 16px 16px;
+    padding-top: 50px;
+    padding-left: 16px;
 
-        box-sizing: border-box;
-    }
+    box-sizing: border-box;
+}
 
 
     /* =====================================================
@@ -1536,27 +1505,25 @@ nav {
        SIDEBAR CONTACT BUTTON
        ===================================================== */
 
-    .nav-container .sidebar-footer {
-        width: 100%;
+    .nav-container .sidebar-footer-mobile-only {
+    width: 100%;
+    margin-top: auto;
+    padding: 0px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    border-radius: 8px;
+}
 
-        margin-top: auto;
+.nav-container .sidebar-footer-mobile-only .btn-primary-blue {
+    width: 100%;
+    height: 46px;
 
-        padding: 0;
-    }
-
-    .nav-container .sidebar-footer .btn-primary-blue {
-        width: 100%;
-        height: 46px;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        font-size: 16px;
-    }
-
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 32px;
+}
     /* =====================================================
        HERO
        ===================================================== */
@@ -1568,7 +1535,7 @@ nav {
     .hero-container {
         width: 100%;
         max-width: 100%;
-
+        
         margin: 0 auto;
 
         display: flex;
@@ -1578,11 +1545,13 @@ nav {
     }
 
     .hero-content {
-        width: 100%;
-        height: auto;
-
-        text-align: center;
-    }
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+}
 
 
     /* ---------- HERO HEADING ---------- */
@@ -1609,35 +1578,27 @@ nav {
 
     /* ---------- HERO PARAGRAPH ---------- */
 
-    .hero-content p {
-        width: 100%;
-        max-width: 100%;
+   .hero-content p {
+    width: 100%;
+    max-width: 343px;
+    height: auto;
+    margin: 0;
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+}
 
-        margin-top: 28px;
-
-        font-size: 16px;
-        line-height: 28px;
-
-        text-align: center;
-    }
-
-
-    /* ---------- FEATURES ---------- */
-
-    .features {
-        width: 100%;
-
-        margin-top: 28px;
-
-        display: flex;
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 6px;
-
-        text-align: left;
-    }
+.features {
+    width: 100%;
+    max-width: 315px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 0; 
+    text-align: left;
+}
 
     .features li {
         width: 100%;
@@ -1648,13 +1609,13 @@ nav {
 
         gap: 12px;
 
-        font-size: 16px;
-        line-height: 28px;
+        font-size: 18px;
+        line-height: 32px;
     }
 
     .features img {
-        width: 22px;
-        height: 22px;
+        width: 24px;
+        height: 24px;
 
         flex-shrink: 0;
     }
@@ -1664,21 +1625,34 @@ nav {
 
     .hero-actions {
         width: 100%;
-
-        margin-top: 28px;
+        margin-top: 0;
 
         display: flex;
         flex-direction: column;
 
-        gap: 12px;
+        gap: 16px;
     }
 
-    .btn-solid,
+    .btn-solid{
+        width: 100%;
+        height: 46px;
+        line-height: auto;
+        font-size: 18px;
+        padding: 22px 14px;
+        border-radius: 8px;
+                text-align: center;
+
+    }
     .btn-outline {
         width: 100%;
         height: 46px;
-
-        font-size: 16px;
+        line-height: auto;
+        font-size: 18px;
+        border-radius: 8px;
+        padding: 22px 14px;
+        border-color: #4356D6;
+        border-width: 2px;
+        text-align: center;
     }
 
 
@@ -1686,11 +1660,11 @@ nav {
 
     .hero-image {
         width: 100%;
-        max-width: 100%;
+        max-width: 350px;
 
-        height: auto;
+        height: 296.13px;
 
-        margin-top: 16px;
+        margin-top: 36px;
 
         display: flex;
 
@@ -1711,12 +1685,8 @@ nav {
        ===================================================== */
 
     .compliance-section {
-        width: 100%;
-
-        padding: 50px 20px;
-
-        overflow: hidden;
-    }
+    padding: 50px 10px;
+}
 
 
     /* ---------- TOP CONTENT ---------- */
@@ -1736,34 +1706,32 @@ nav {
 
     /* ---------- HEADING ---------- */
 
-    .heading-wrapper {
-        width: 100%;
-        max-width: 100%;
-    }
+.heading-wrapper {
+    width: 343px;
+    max-width: 100%;
+    height: 144px;
+}
 
-    .heading-wrapper h2 {
-        width: 100%;
-        height: auto;
+.heading-wrapper h2 {
+    width: 100%;
+    height: 144px;
 
-        margin: 0;
+    margin: 0;
 
-        font-size: 34px;
-        line-height: 44px;
+    font-size: 34px;
+    line-height: 48px;
+    font-weight: 600;
 
-        text-align: center;
-    }
-
-    .heading-wrapper .title-line {
-        display: block;
-        white-space: normal;
-    }
-
+    text-align: center;
+}
 
     /* ---------- DESCRIPTION ---------- */
 
     .content-box {
         width: 100%;
-        max-width: 100%;
+        max-width: 343px;
+        max-height: 256px;
+        height: auto;
     }
 
     .content-box .description {
@@ -1772,9 +1740,9 @@ nav {
 
         height: auto;
 
-        font-size: 16px;
-        line-height: 28px;
-
+        font-size: 18px;
+        line-height: 32px;
+        margin-bottom: 36px;
         text-align: center;
     }
 
@@ -1801,16 +1769,28 @@ nav {
 
     .illustration-box {
         width: 100%;
-        max-width: 100%;
+        max-width: 343px;
 
-        height: auto;
+        height: 343px;
 
-        padding: 0;
+        padding-top: 35px;
+
         margin: 0;
 
         display: flex;
 
         justify-content: center;
+    }
+    .arrow-vector {
+        position: absolute;
+        display: block;
+        width: 25px;
+        height: auto;
+
+        left: 330px;
+        top: 1560px;
+
+        z-index: 10;
     }
 
     .section2-img {
@@ -1827,11 +1807,12 @@ nav {
 
     .zigzag-container {
         left: 0;
-        top: auto;
+        top: 325px;
     }
 
     .bottom-zigzag {
-        width: 110px;
+        width: 85px;
+        height: 21.5px;
         height: auto;
     }
 
@@ -1849,25 +1830,23 @@ nav {
         display: flex;
         flex-direction: column;
 
-        gap: 16px;
+        gap: 26px;
 
         padding: 0;
     }
 
     .info-card {
+        max-width: 343px;;
         width: 100%;
         height: auto;
 
-        min-height: 120px;
-
-        padding: 16px;
+        padding: 20px;
 
         display: flex;
         flex-direction: row;
 
         align-items: flex-start;
-
-        gap: 12px;
+        gap: 26px;
     }
 
 
@@ -1898,31 +1877,27 @@ nav {
     /* ---------- CARD TEXT ---------- */
 
     .card-text {
-        width: auto;
+        max-width: 241px;
         height: auto;
-
         flex: 1;
-
         text-align: left;
     }
 
     .card-text h3 {
-        font-size: 20px;
-        line-height: 28px;
+        font-size: 24px;
+        line-height: 32px;
 
         margin-bottom: 4px;
     }
 
     .card-text p {
-        font-size: 15px;
-        line-height: 24px;
+        font-size: 18px;
+        line-height: 32px;
     }
 
 
     /* ---------- ARROW ---------- */
 
-    .arrow-vector {
-        display: none;
-    }
+    
 
 }
