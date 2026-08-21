@@ -121,7 +121,7 @@ nav {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 26px;
 }
 
 /* Hide checkbox & hamburger defaults on desktop */
@@ -217,7 +217,7 @@ nav {
 
     font-family: 'Roboto', sans-serif;
     font-size: 64px;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 85px;
 
     color: #000;
@@ -1935,11 +1935,6 @@ nav {
         height: 21.5px;
         height: auto;
     }
-
-
-    /* =====================================================
-       CARDS
-       ===================================================== */
 
     .cards-container {
         width: 100%;
