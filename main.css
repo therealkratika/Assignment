@@ -14,11 +14,7 @@
   --bg-light: #f8fafc;
   --border-color: #e2e8f0;
   --white: #ffffff;
-
-  /* Typography Scale */
   --font-family: 'Roboto', system-ui, -apple-system, sans-serif;
-
-  /* Responsive Spacing Container */
   --container-max-width: 1440px;
   --padding-x-desktop: 80px;
   --padding-x-tablet: 40px;
@@ -52,20 +48,36 @@ button {
   border: none;
   background: none;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 18px;
   line-height: auto;
   transition: all 0.2s ease;
 }
 
 .btn-primary-blue {
-  background-color: #4356D6;
-  color: var(--white);
-  padding: 12px 24px;
+  width: 169px;
+  height: 46px;
+
+  padding: 0;
+  box-sizing: border-box;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
+
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+
+  color: var(--white);
+  background-color: #4356D6;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
 }
 
 .btn-primary-blue:hover {
@@ -92,8 +104,9 @@ header {
 nav {
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 var(--padding-x-desktop);
-  height: 58px;
+  padding-left: 100px ;
+  padding-right: 100px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -104,8 +117,8 @@ nav {
   align-items: center;        /* Matches Figma auto-layout vertical centering */
   justify-content: flex-start;
   width: 158.71px;            /* Exact Figma Hug/Frame width */
-  height: 58px;               /* Exact Figma Height */
-  gap: 18px;                  /* Exact Gap setting from Auto Layout panel */
+  height: 58px;               
+  gap: 16px;                  /* Exact Gap setting from Auto Layout panel */
   text-decoration: none;
   box-sizing: border-box;
 }
@@ -123,8 +136,6 @@ nav {
   align-items: center;
   gap: 26px;
 }
-
-/* Hide checkbox & hamburger defaults on desktop */
 .menu-toggle,
 .hamburger-icon,
 .menu-overlay,
@@ -154,24 +165,30 @@ nav {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 26px;            /* Exact 26px spacing between links from Figma */
+  gap: 26px;
+
   height: 41px;
-  list-style: none;
   margin: 0;
   padding: 0;
+
+  list-style: none;
 }
 
-
-/* Individual Nav Link Items */
-.nav-links a{
+.nav-links a {
   display: flex;
   align-items: center;
+
+  height: 41px;
+  padding: 10px;
+
+  box-sizing: border-box;
+
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  color: #000000;
-  white-space: nowrap;  /* Prevents text wrapping */
+  color: #000;
+  white-space: nowrap;
 }
 
 .nav-links a.active,
@@ -201,27 +218,19 @@ nav {
     grid-template-columns: 606px 739.13px;
     align-items: center;
 }
-.hero-content{
-  width: 100%;
-  max-width: 606px;
-  min-width: 0;
-  height: 583px;
-  
-  gap: 26px;
-}
 .hero-content h1 {
-  width: 100%;
-    max-width: 606px;
-    height: auto;
-    max-height: 255px;
+  width: 620px;
+  max-width: 100%;
+  height: 255px;
 
-    font-family: 'Roboto', sans-serif;
-    font-size: 64px;
-    font-weight: 700;
-    line-height: 85px;
+  margin: 0;
 
-    color: #000;
-    margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 85px;
+
+  color: #000;
 }
 
 .hero-content .highlight {
@@ -248,7 +257,7 @@ nav {
     font-size: 18px;
     line-height: 32px;
     font-weight: 400;
-
+    font-family: 'Roboto', sans-serif;
     color: var(--text-dark);
 }
 
@@ -588,12 +597,12 @@ nav {
     }
 
     .hero-content h1 {
-        width: 100%;
-        max-width: 520px;
+    width: 100%;
+    height: auto;
 
-        font-size: 52px;
-        line-height: 68px;
-    }
+    font-size: 46px;
+    line-height: 60px;
+  }
 
     .hero-content p {
         width: 100%;
