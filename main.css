@@ -94,8 +94,9 @@ button {
    ========================================================================== */
 header {
   width: 100%;
-  background-color: var(--white);
-  border-bottom: 1px solid var(--border-color);
+  /* Match HERO / Section 1 background and remove divider line */
+  background-color: #FAFBFF;
+  /* border-bottom removed to eliminate the divider line */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -733,7 +734,7 @@ nav {
 
 @media (max-width: 1020px) and (min-width: 768px) {
     nav {
-        height: 72px;
+        height: 100px;
         padding: 0 40px;
     }
 /* Hide checkbox */
@@ -1065,32 +1066,31 @@ nav {
     }
 
     .hero-container {
-        width: 100%;
-        max-width: 636px;
-        height: auto;
-        margin: 0 auto;
+    width: 100%;
+    max-width: 636px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-content {
-        width: 636px;
-        height: 478px;
-        text-align: center;
-        gap: 26px;
-    }
-
+.hero-content {
+    width: 636px;
+    height: 478px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 36px;
+}
     .hero-content h1 {
-   
         width: 604px;
         height: auto;
-
         font-size: 46px;
         line-height: 60px;
         font-family: 'Roboto', sans-serif;
         text-align: center;
+        margin: 0;
     }
 
     .hero-content p {
@@ -1101,13 +1101,14 @@ nav {
     font-weight: 400;
     text-align: center;
     font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 
     .features {
     width: fit-content;
     max-width: 466px;
     height: 108px;
-    margin: 26px 62px ;
+    margin: 0;
     gap: 6px;
     text-align: left;
 }
@@ -1123,24 +1124,24 @@ nav {
 
     .hero-actions {
         justify-content: center;
-        margin-top: 36px;
+        margin: 0px;
+        padding: 0;
     }
 
 
     /* ================= HERO IMAGE ================= */
 
     .hero-image {
-        width: 100%;
-        max-width: 636px;
+    width: 100%;
+    max-width: 636px;
+    height: auto;
 
-        height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        margin-top: 16px;
-    }
+    margin-top: 16px!important;
+}
 
     .main-banner {
         width: 636px;
@@ -1309,10 +1310,9 @@ nav {
     /* ================= DECORATIVE ELEMENTS ================= */
 
     .arrow-vector {
-        /* don't use fixed desktop position on tablet */
         left: auto;
         right: 15%;
-        top: 1665px;
+        top: 1700px;
     }
 
     .zigzag-container {
