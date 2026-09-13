@@ -205,6 +205,17 @@ nav {
     grid-template-columns: 606px 739.13px;
     align-items: center;
 }
+.hero-content {
+  width: 606px;
+  height: 583px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  gap: 26px;
+}
 .hero-content h1 {
   width: 620px;
   max-width: 100%;
@@ -238,9 +249,6 @@ nav {
     width: 606px;
     height: 96px;
     max-width: 100%;
-
-    margin-top: 24px;
-
     font-size: 18px;
     line-height: 32px;
     font-weight: 400;
@@ -250,7 +258,6 @@ nav {
 
 .features {
   list-style: none;
-  margin-top: 28px;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -273,7 +280,6 @@ nav {
 }
 
 .hero-actions {
-  margin-top: 36px;
   display: flex;
   gap: 24px;
 }
@@ -335,17 +341,13 @@ nav {
   border-color: var(--primary-blue);
   color: var(--primary-blue);
 }
-
-
 .hero-image {
     width: 739.15px;
     height: auto;
     display: flex;
     height: 607px;
     align-items: center;
-    
 }
-
 .main-banner {
     max-height: auto;
     width: 739.13px;
@@ -450,7 +452,7 @@ nav {
   position: absolute;
   left:-100px;
   align-items: start;
-  top: 590px;
+  top: 570px;
   width: 137.33px;
   height: 34.17px;
 }
@@ -682,6 +684,10 @@ nav {
 
         box-sizing: border-box;
     }
+    .arrow-vector {
+        left: 490px;
+        top: 800px;
+    }
 }
 /* 
    TABLET : 1020px → 768px */
@@ -846,12 +852,6 @@ nav {
     padding-left: 16px;
     box-sizing: border-box;
 }
-
-
-/* 
-   NAV LINKS
- */
-
 .nav-container .nav-links-container {
     position: static;
 
@@ -911,9 +911,6 @@ nav {
 .nav-container .nav-links li a.active {
     color: #4356D6;
 }
-
-
-/* ICONS */
 
 .nav-container .nav-links .nav-icon {
     width: 24px;
@@ -1245,7 +1242,8 @@ nav {
     }
 
 }
-@media (max-width: 767px) and (min-width: 375px) {
+
+@media (max-width: 767px){
     .hero{
         gap: 36px;
     }
@@ -1676,6 +1674,7 @@ nav {
     }
 
     .compliance-section {
+        position: relative;
     padding: 50px 16px;
 }
 
@@ -1768,9 +1767,9 @@ nav {
         display: block;
         width: 25px;
         height: auto;
-
-        left: 330px;
-        top: 1530px;
+        right: 8%;
+        left: auto;
+        top: 480px;
 
         z-index: 10;
     }
@@ -1863,11 +1862,14 @@ nav {
     
 }
 
-/* Keep the desktop composition fixed at its 1440px layout on larger screens. */
 @media (min-width: 1441px) {
     .hero-container {
         margin-left: calc((100% - 1440px) / 2 + 72px);
         margin-right: 0;
+    }
+
+    .arrow-vector {
+        left: calc(600px + (100% - 1440px) / 2);
     }
 
     .compliance-section {
