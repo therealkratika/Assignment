@@ -88,15 +88,9 @@ button {
 .full-width {
   width: 100%;
 }
-
-/* ==========================================================================
-   2. NAVBAR & MOBILE SIDEBAR DRAWER
-   ========================================================================== */
 header {
   width: 100%;
-  /* Match HERO / Section 1 background and remove divider line */
   background-color: #FAFBFF;
-  /* border-bottom removed to eliminate the divider line */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -115,20 +109,18 @@ nav {
 
 .logo-frame {
   display: inline-flex;
-  align-items: center;        /* Matches Figma auto-layout vertical centering */
+  align-items: center;       
   justify-content: flex-start;
-  width: 158.71px;            /* Exact Figma Hug/Frame width */
+  width: 158.71px;            
   height: 58px;               
-  gap: 16px;                  /* Exact Gap setting from Auto Layout panel */
+  gap: 16px;                  
   text-decoration: none;
   box-sizing: border-box;
 }
-
-/* Inner Logo Image */
 .logo-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;        /* Prevents image distortion */
+  object-fit: contain;       
   display: block;
 }
 
@@ -161,8 +153,6 @@ nav {
     align-items: center;
     justify-content: center;
 }
-
-/* Container Frame (Frame 1212) */
 .nav-links {
   display: flex;
   align-items: center;
@@ -198,12 +188,8 @@ nav {
 }
 
 .nav-icon {
-  display: none; /* Hide link icons on desktop */
+  display: none; 
 }
-
-/* ==========================================================================
-   3. HERO SECTION
-   ========================================================================== */
 .hero {
   background-color: #FAFBFF;
  
@@ -366,10 +352,6 @@ nav {
     height: 607px;
     display: block;
 }
-
-/* ==========================================================================
-   4. COMPLIANCE IMPORTANCE SECTION
-   ========================================================================== */
 .compliance-section {
   width: 100%;
   background: #fff;
@@ -438,11 +420,9 @@ nav {
   align-items: left;
   text-align: left;
   width: 100%;
-  max-width: 720px; /* match heading length */
-  margin: 0 auto 0; /* no extra gap; heading provides 20px */
+  max-width: 720px; 
+  margin: 0 auto 0; 
 }
-
-/* Bottom Content Layout */
 .bottom-content {
   padding-top: 76px;
   display: grid;
@@ -540,16 +520,12 @@ nav {
   line-height: 32px;
   color: var(--text-dark);
 }
-/* =========================================================
-   1440px → 1021px
-   DESKTOP SHRINK
-   ========================================================= */
+/* 1440px → 1021px
+   DESKTOP SHRINK */
 
 @media (max-width: 1300px) and (min-width: 1021px) {
 
-    /* =====================================================
-       NAVBAR
-       ===================================================== */
+    /*  NAVBAR */
 
     nav {
         width: 100%;
@@ -565,9 +541,7 @@ nav {
     }
 
 
-    /* =====================================================
-       HERO
-       ===================================================== */
+    /* HERO */
 
     .hero {
         padding: 70px 0 40px;
@@ -581,9 +555,6 @@ nav {
         margin: 0 auto;
 
         display: grid;
-
-        /* IMPORTANT:
-           Do NOT use 606px + 739px here */
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
         gap: 30px;
@@ -628,9 +599,7 @@ nav {
     }
 
 
-    /* =====================================================
-       COMPLIANCE SECTION
-       ===================================================== */
+    /* COMPLIANCE SECTION */
 
     .compliance-section {
         width: 100%;
@@ -680,9 +649,8 @@ nav {
     }
 
 
-    /* =====================================================
-       BOTTOM CONTENT
-       ===================================================== */
+    /* 
+       BOTTOM CONTENT */
 
     .bottom-content {
         width: 100%;
@@ -728,9 +696,8 @@ nav {
         box-sizing: border-box;
     }
 }
-/* =========================================================
-   TABLET : 1020px → 768px
-   ========================================================= */
+/* 
+   TABLET : 1020px → 768px */
 
 @media (max-width: 1020px) and (min-width: 768px) {
     nav {
@@ -762,10 +729,6 @@ nav {
     height: 24px;
     object-fit: contain;
 }
-
-
-/* HIDE HAMBURGER WHEN OPEN */
-
 #menu-toggle:checked ~ .hamburger-icon {
     display: none;
 }
@@ -774,9 +737,7 @@ nav {
     }
 
 
-/* =========================
-   OVERLAY
-========================= */
+/*  OVERLAY */
 
 .menu-overlay {
     display: block;
@@ -807,9 +768,7 @@ nav {
 }
 
 
-/* =========================
-   RIGHT SIDEBAR
-========================= */
+/* RIGHT SIDEBAR */
 
 .nav-container {
     position: fixed;
@@ -886,9 +845,7 @@ nav {
 }
 
 
-/* =========================
-   MENU WRAPPER
-========================= */
+/* MENU WRAPPER */
 
 .nav-menu-wrapper {
     width: 100%;
@@ -904,9 +861,9 @@ nav {
 }
 
 
-/* =========================
+/* 
    NAV LINKS
-========================= */
+ */
 
 .nav-container .nav-links-container {
     position: static;
@@ -981,12 +938,6 @@ nav {
 
     object-fit: contain;
 }
-
-
-/* =========================
-   SIDEBAR CONTACT BUTTON
-========================= */
-
 .nav-container .sidebar-footer-mobile-only {
     width: 172px;
     max-width: calc(100% - 32px);
@@ -1020,7 +971,6 @@ nav {
         display: none;
     }
 
-    /* Show hamburger */
     .hamburger-icon {
         display: flex;
         align-items: center;
@@ -1035,7 +985,6 @@ nav {
         height: 24px;
         object-fit: contain;
     }
-    /* Hide hamburger when sidebar is open */
 #menu-toggle:checked ~ .hamburger-icon {
     display: none;
 }
@@ -1059,7 +1008,7 @@ nav {
     }
 
 
-    /* ================= HERO ================= */
+    /*  HERO  */
 
     .hero {
         padding: 49px 66px 161.7px 66px;
@@ -1128,9 +1077,6 @@ nav {
         padding: 0;
     }
 
-
-    /* ================= HERO IMAGE ================= */
-
     .hero-image {
     width: 100%;
     max-width: 636px;
@@ -1148,9 +1094,6 @@ nav {
         max-width: 100%;
         height: auto;
     }
-
-
-    /* ================= COMPLIANCE SECTION ================= */
 
     .compliance-section {
         width: 100%;
@@ -1206,9 +1149,6 @@ nav {
         text-align: center;
     }
 
-
-    /* ================= BOTTOM CONTENT ================= */
-
     .bottom-content {
         width: 100%;
 
@@ -1222,9 +1162,6 @@ nav {
 
         padding-top: 40px;
     }
-
-
-    /* ================= ILLUSTRATION ================= */
 
     .illustration-box {
     width: 100%;
@@ -1243,10 +1180,6 @@ nav {
     height: auto;
     padding: 0%;
 }
-
-
-    /* ================= CARDS ================= */
-
     .cards-container {
         width: 100%;
         max-width: 728px;
@@ -1306,9 +1239,6 @@ nav {
         line-height: 32px;
     }
 
-
-    /* ================= DECORATIVE ELEMENTS ================= */
-
     .arrow-vector {
         left: auto;
         right: 15%;
@@ -1353,9 +1283,8 @@ nav {
         display: none;
     }
 
-    /* =====================================================
-       HAMBURGER
-       ===================================================== */
+    /* 
+       HAMBURGER */
 
     .menu-toggle {
         display: none;
@@ -1416,9 +1345,6 @@ nav {
             opacity 0.3s ease,
             visibility 0.3s ease;
     }
-
-    /* Show overlay when menu opens */
-
     #menu-toggle:checked ~ .menu-overlay {
         opacity: 1;
         visibility: visible;
@@ -1452,11 +1378,6 @@ nav {
         transform: translateX(0);
     }
 
-
-    /* =====================================================
-       SIDEBAR HEADER
-       ===================================================== */
-
     .nav-container .sidebar-header {
         width: 327px;
         max-width: 100%;
@@ -1483,11 +1404,6 @@ nav {
         object-fit: contain;
     }
 
-
-    /* =====================================================
-       CLOSE X
-       ===================================================== */
-
     .nav-container .close-icon {
         display: flex;
 
@@ -1508,11 +1424,6 @@ nav {
         padding: 0px;
     }
 
-
-    /* =====================================================
-       SIDEBAR MENU WRAPPER
-       ===================================================== */
-
     .nav-menu-wrapper {
     max-width: 282px;
     height: 546px;
@@ -1529,11 +1440,6 @@ nav {
 
     overflow-y: auto;
 }
-
-
-    /* =====================================================
-       NAV LINKS
-       ===================================================== */
 
     .nav-container .nav-links-container {
         position: static;
@@ -1608,11 +1514,6 @@ nav {
         object-fit: contain;
     }
 
-
-    /* =====================================================
-       SIDEBAR CONTACT BUTTON
-       ===================================================== */
-
     .nav-container .sidebar-footer-mobile-only {
     max-width: 282px;
     width: 100%;
@@ -1648,9 +1549,6 @@ nav {
     visibility: visible !important;
     opacity: 1 !important;
 }
-    /* =====================================================
-       HERO
-       ===================================================== */
 
     .hero {
         padding: 26px 16px 18px 16px;
@@ -1678,9 +1576,6 @@ nav {
     gap: 26px;
 }
 
-
-    /* ---------- HERO HEADING ---------- */
-
     .hero-content h1 {
         width: 100%;
         max-width: 100%;
@@ -1699,9 +1594,6 @@ nav {
     .hero-content .underline {
         bottom: -5px;
     }
-
-
-    /* ---------- HERO PARAGRAPH ---------- */
 
    .hero-content p {
     width: 100%;
@@ -1745,9 +1637,6 @@ nav {
         object-fit: contain;
     }
 
-
-    /* ---------- HERO BUTTONS ---------- */
-
     .hero-actions {
         width: 343px;
         margin-top: 0;
@@ -1780,10 +1669,6 @@ nav {
         text-align: center;
         font-weight: 500;
     }
-
-
-    /* ---------- HERO IMAGE ---------- */
-
     .hero-image {
         width: 100%;
         width: 350px;
@@ -1803,17 +1688,12 @@ nav {
         height: auto;
     }
 
-
-    /* =====================================================
-       COMPLIANCE SECTION
-       ===================================================== */
-
     .compliance-section {
     padding: 50px 16px;
 }
 
 
-    /* ---------- TOP CONTENT ---------- */
+    /*  TOP CONTENT  */
 
     .top-content {
         width: 100%;
@@ -1828,7 +1708,7 @@ nav {
     }
 
 
-    /* ---------- HEADING ---------- */
+    /*  HEADING  */
 
 .heading-wrapper {
     width: 343px;
@@ -1849,7 +1729,7 @@ nav {
     text-align: center;
 }
 
-    /* ---------- DESCRIPTION ---------- */
+    /*  DESCRIPTION  */
 
     .content-box {
         width: 100%;
@@ -1870,11 +1750,6 @@ nav {
         text-align: center;
     }
 
-
-    /* =====================================================
-       BOTTOM CONTENT
-       ===================================================== */
-
     .bottom-content {
         width: 100%;
 
@@ -1887,10 +1762,6 @@ nav {
 
         gap: 20px;
     }
-
-
-    /* ---------- ILLUSTRATION ---------- */
-
     .illustration-box {
         width: 100%;
         max-width: 343px;
@@ -1925,9 +1796,6 @@ nav {
 
         padding: 0;
     }
-
-
-    /* ---------- ZIGZAG ---------- */
 
     .zigzag-container {
         left: 0;
@@ -1967,10 +1835,6 @@ nav {
         align-items: flex-start;
         gap: 26px;
     }
-
-
-    /* ---------- CARD ICON ---------- */
-
     .icon-box {
         width: 32px;
         height: 32px;
@@ -1991,10 +1855,6 @@ nav {
 
         margin: 0;
     }
-
-
-    /* ---------- CARD TEXT ---------- */
-
     .card-text {
         max-width: 241px;
         height: auto;
@@ -2013,10 +1873,5 @@ nav {
         font-size: 18px;
         line-height: 32px;
     }
-
-
-    /* ---------- ARROW ---------- */
-
     
-
 }
