@@ -14,7 +14,7 @@
   --bg-light: #f8fafc;
   --border-color: #e2e8f0;
   --white: #ffffff;
-  --font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+  --font-family: 'Roboto', system-ui, sans-serif;
   --container-max-width: 1440px;
   --padding-x-desktop: 80px;
   --padding-x-tablet: 40px;
@@ -199,8 +199,8 @@ nav {
     width: 100%;
     margin-left: 72px;
     margin-right: 20px;
-    margin-top: 102px;
     margin-bottom: 52px;
+    margin-top: 50px;
     display: grid;
     grid-template-columns: 606px 739.13px;
     align-items: center;
@@ -520,13 +520,8 @@ nav {
   line-height: 32px;
   color: var(--text-dark);
 }
-/* 1440px → 1021px
-   DESKTOP SHRINK */
 
-@media (max-width: 1300px) and (min-width: 1021px) {
-
-    /*  NAVBAR */
-
+@media (max-width: 1400px) and (min-width: 1021px) {
     nav {
         width: 100%;
         padding: 0 40px;
@@ -539,9 +534,6 @@ nav {
     .nav-links a {
         font-size: 16px;
     }
-
-
-    /* HERO */
 
     .hero {
         padding: 70px 0 40px;
@@ -598,13 +590,8 @@ nav {
         height: auto;
     }
 
-
-    /* COMPLIANCE SECTION */
-
     .compliance-section {
         width: 100%;
-        max-width: 1100px;
-
         margin: 0 auto;
 
         padding: 50px 60px;
@@ -1874,4 +1861,17 @@ nav {
         line-height: 32px;
     }
     
+}
+
+/* Keep the desktop composition fixed at its 1440px layout on larger screens. */
+@media (min-width: 1441px) {
+    .hero-container {
+        margin-left: calc((100% - 1440px) / 2 + 72px);
+        margin-right: 0;
+    }
+
+    .compliance-section {
+        padding-left: calc(100px + (100% - 1440px) / 2);
+        padding-right: calc(100px + (100% - 1440px) / 2);
+    }
 }
